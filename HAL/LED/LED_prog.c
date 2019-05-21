@@ -17,7 +17,7 @@ void LED_voidInit(void) {
 	return;
 }
 
-void LED_ON(LED_NUM) {
+void LED_ON(u8 LED_NUM) {
 
 	switch(LED_NUM) {
 
@@ -59,7 +59,7 @@ void LED_ON(LED_NUM) {
 	}
 }
 
-void LED_OFF(LED_NUM) {
+void LED_OFF(u8 LED_NUM) {
 
 	switch(LED_NUM) {
 
@@ -101,9 +101,9 @@ void LED_OFF(LED_NUM) {
 	}
 }
 
-void LED_TOGGLE(LED_NUM) {
+void LED_TOGGLE(u8 LED_NUM) {
 
-	switch(LED_NUM):
+	switch(LED_NUM) {
 
 		case LED_0:
 			if(DIO_u8GetPin(LED_0_PIN) == DIO_HIGH) {
@@ -123,14 +123,5 @@ void LED_TOGGLE(LED_NUM) {
 			} else {
 				DIO_voidSetPin(LED_2_PIN, DIO_HIGH);
 			}
+	}
 }
-
-
-
-
-
-
-
-
-
-
