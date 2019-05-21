@@ -12,6 +12,11 @@
 #include "SEVEN_SEGMENT_config.h"
 #include "SEVEN_SEGMENT_int.h"
 
+void SEVEN_SEGMENT_voidInit(void) {
+
+	return;
+}
+
 void SEVEN_SEGMENT_ENABLE(SEVEN_SEGMENT_NUM) {
 
 	switch(SEVEN_SEGMENT_NUM) {
