@@ -26,7 +26,7 @@ void LED_ON(u8 LED_NUM) {
 				DIO_u8SetPin(LED_0_PIN, DIO_HIGH);
 			}
 			#elif(LED_0_MODE == REVERSE) {
-				DIO_voidClearPin(LED_0_PIN);
+				DIO_u8SetPin(LED_0_PIN, DIO_LOW);
 			}
 			#else
     			#error "Wrong Mode"
@@ -38,7 +38,7 @@ void LED_ON(u8 LED_NUM) {
 				DIO_u8SetPin(LED_1_PIN, DIO_HIGH);
 			}
 			#elif(LED_1_MODE == REVERSE) {
-				DIO_voidClearPin(LED_1_PIN);
+				DIO_u8SetPin(LED_1_PIN, DIO_LOW);
 			}
 			#else
     			#error "Wrong Mode"
@@ -50,7 +50,7 @@ void LED_ON(u8 LED_NUM) {
 				DIO_u8SetPin(LED_2_PIN, DIO_HIGH);
 			}
 			#elif(LED_2_MODE == REVERSE) {
-				DIO_voidClearPin(LED_2_PIN);
+				DIO_u8SetPin(LED_2_PIN, DIO_LOW);
 			}
 			#else
     			#error "Wrong Mode"
@@ -65,7 +65,7 @@ void LED_OFF(u8 LED_NUM) {
 
 		case LED_0:
 			#if(LED_0_MODE == FORWARD) {
-				DIO_voidClearPin(LED_0_PIN);
+				DIO_u8SetPin(LED_0_PIN, DIO_LOW);
 			}
 			#elif(LED_0_MODE == REVERSE) {
 				DIO_voidSetPin(LED_0_PIN, DIO_HIGH);
@@ -77,7 +77,7 @@ void LED_OFF(u8 LED_NUM) {
 
 		case LED_1:
 			#if(LED_1_MODE == FORWARD) {
-				DIO_voidClearPin(LED_1_PIN);
+				DIO_u8SetPin(LED_1_PIN, DIO_LOW);
 			}
 			#elif(LED_1_MODE == REVERSE) {
 				DIO_voidSetPin(LED_1_PIN, DIO_HIGH);
@@ -89,7 +89,7 @@ void LED_OFF(u8 LED_NUM) {
 
 		case LED_2:
 			#if(LED_2_MODE == FORWARD) {
-				DIO_voidClearPin(LED_2_PIN);
+				DIO_u8SetPin(LED_2_PIN, DIO_LOW);
 			}
 			#elif(LED_2_MODE == REVERSE) {
 				DIO_voidSetPin(LED_2_PIN, DIO_HIGH);
@@ -107,19 +107,19 @@ void LED_TOGGLE(u8 LED_NUM) {
 
 		case LED_0:
 			if(DIO_u8GetPin(LED_0_PIN) == DIO_HIGH) {
-				DIO_voidClearPin(LED_0_PIN);
+				DIO_u8SetPin(LED_0_PIN, DIO_LOW);
 			} else {
 				DIO_voidSetPin(LED_0_PIN, DIO_HIGH);
 			}
 		case LED_1:
 			if(DIO_u8GetPin(LED_1_PIN) == DIO_HIGH) {
-				DIO_voidClearPin(LED_1_PIN);
+				DIO_u8SetPin(LED_1_PIN, DIO_LOW);
 			} else {
 				DIO_voidSetPin(LED_1_PIN, DIO_HIGH);
 			}
 		case LED_2:
 			if(DIO_u8GetPin(LED_2_PIN) == DIO_HIGH) {
-				DIO_voidClearPin(LED_2_PIN);
+				DIO_u8SetPin(LED_2_PIN, DIO_LOW);
 			} else {
 				DIO_voidSetPin(LED_2_PIN, DIO_HIGH);
 			}
