@@ -9,6 +9,6 @@
 #define LED_1 1
 #define LED_2 2
 
-void LED_ON(LED_NUM);
-void LED_OFF(LED_NUM);
-void LED_TOGGLE(LED_NUM);
+void LED_ON(u8 LED_NUM);
+void LED_OFF(u8 LED_NUM);
+void LED_TOGGLE(u8 LED_NUM);
