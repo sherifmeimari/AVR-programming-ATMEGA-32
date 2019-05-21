@@ -9,6 +9,7 @@
 #include "DIO_int.h"
 #include "SWITCH_int.h"
 #include "LED_int.h"
+#include "SEVEN_SEGMENT_int.h"
 #include "avr/io.h"
 
 
@@ -17,6 +18,7 @@ int main() {
 	DIO_voidInit();
 	SWITCH_voidInit();
 	LED_voidInit();
+	SEVEN_SEGMENT_voidInit();
 
 	while(1) {
 
@@ -41,6 +43,15 @@ int main() {
 			LED_OFF(LED_2);
 		}
 
+		// Display 15 on Seven Segment Display:
+		SEVEN_SEGMENT_ENABLE(SEVEN_SEGMENT_0);
+		SEVEN_SEGMENT_DISPLAY(SEVEN_SEGMENT_0, 1);
+		SEVEN_SEGMENT_DISABLE(SEVEN_SEGMENT_1);
+		_delay_ms(20);
+		SEVEN_SEGMENT_DISABLE(SEVEN_SEGMENT_0);
+		SEVEN_SEGMENT_ENABLE(SEVEN_SEGMENT_1);
+		SEVEN_SEGMENT_DISPLAY(SEVEN_SEGMENT_1, 5);
+		_delay_ms(20);
 	}
 
 	return 0;
